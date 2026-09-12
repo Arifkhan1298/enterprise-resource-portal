@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-density="cozy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEXUS Enterprise Resource Portal - High-performance centralized hub for enterprise resources, documents, services, requests, employee directory, and analytics.">
+  <meta name="theme-color" content="#0047AB">
+  <title>NEXUS ERP — Enterprise Resource Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Enterprise App Bar -->
+  <header class="app-header" id="appHeader">
+    <div class="header-inner">
+      
+      <!-- Brand Logo -->
+      <a href="#dashboard" class="brand" id="brandLogo" aria-label="NEXUS Enterprise Portal Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">NEXUS<span>PORTAL</span></span>
+          <span class="brand-tagline">Enterprise Resource System</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="main-nav" id="mainNav" aria-label="Primary Navigation">
+        <a href="#dashboard" class="nav-link active" data-nav="dashboard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span data-i18n="nav_home">Home</span>
+        </a>
+        <a href="#resources" class="nav-link" data-nav="resources">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span data-i18n="nav_resources">Resources</span>
+        </a>
+        <a href="#documents" class="nav-link" data-nav="documents">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span data-i18n="nav_documents">Documents</span>
+        </a>
+        <a href="#forms" class="nav-link" data-nav="forms">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          <span data-i18n="nav_forms">Forms</span>
+        </a>
+        <a href="#requests" class="nav-link" data-nav="requests">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span data-i18n="nav_requests">Requests</span>
+        </a>
+        <a href="#services" class="nav-link" data-nav="services">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <span data-i18n="nav_services">Services</span>
+        </a>
+        <a href="#directory" class="nav-link" data-nav="directory">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span data-i18n="nav_directory">Directory</span>
+        </a>
+        <a href="#knowledge" class="nav-link" data-nav="knowledge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <span data-i18n="nav_knowledge">Knowledge</span>
+        </a>
+        <a href="#calendar" class="nav-link" data-nav="calendar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-i18n="nav_calendar">Calendar</span>
+        </a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="header-actions">
+        <!-- Global Search Trigger -->
+        <button class="search-trigger" id="globalSearchBtn" aria-label="Open global search (Shortcut Ctrl+K)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span data-i18n="search_placeholder">Search resources...</span>
+          <span class="kbd-shortcut">Ctrl+K</span>
+        </button>
+
+        <!-- Favorites Button -->
+        <button class="btn-icon" id="favoritesDrawerBtn" aria-label="View Saved Favorites" title="My Favorites">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span class="badge-count" id="favoritesBadgeCount">0</span>
+        </button>
+
+        <!-- Notification Bell -->
+        <button class="btn-icon" id="notificationsBtn" aria-label="View Notifications" title="Notifications">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="badge-dot" id="unreadNotifDot"></span>
+        </button>
+
+        <!-- Language Switcher -->
+        <button class="btn-icon" id="langToggleBtn" aria-label="Toggle Language" title="English / Urdu">
+          <span id="langLabel" style="font-size:0.78rem; font-weight:700;">EN</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="btn-icon" id="themeToggleBtn" aria-label="Toggle Light and Dark Mode" title="Toggle Theme">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <!-- Primary Request CTA -->
+        <button class="btn btn-primary" id="headerCreateRequestBtn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span data-i18n="create_request_btn">Create Request</span>
+        </button>
+
+        <!-- User Profile Pill -->
+        <div class="user-pill" id="userProfileBtn" role="button" tabindex="0" aria-label="Open User Profile & Settings">
+          <div class="avatar" id="headerUserAvatar">AL</div>
+          <div class="user-pill-info">
+            <span class="user-pill-name" id="headerUserName">Alex Lawrence</span>
+            <span class="user-pill-role" id="headerUserDept">Software Engineer</span>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Portal Body -->
+  <main class="main-content" id="mainContent">
+
+    <!-- Hero / Executive Portal Welcome -->
+    <section class="hero-portal" id="heroPortal">
+      <div class="hero-grid">
+        <div class="hero-text-col">
+          <div class="hero-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            <span data-i18n="hero_badge">Global Operational Hub</span>
+          </div>
+          <h1 class="hero-headline">
+            <span data-i18n="hero_headline_1">Everything Your Enterprise Needs.</span><br>
+            <span class="highlight-cobalt" data-i18n="hero_headline_2">One Powerful</span> <span class="highlight-copper" data-i18n="hero_headline_3">Portal.</span>
+          </h1>
+          <p class="hero-subtext" data-i18n="hero_subtext">
+            Provide employees and teams with fast, centralized access to business resources, internal services, documents, departments and enterprise tools.
+          </p>
+          <div class="hero-actions">
+            <a href="#resources" class="btn btn-primary btn-lg" id="heroExploreBtn">
+              <span data-i18n="explore_resources_cta">Explore Resources</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <button class="btn btn-copper btn-lg" id="heroCreateRequestBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span data-i18n="submit_request_cta">Submit Request</span>
+            </button>
+            <a href="#knowledge" class="btn btn-outline btn-lg" id="heroKnowledgeBtn">
+              <span data-i18n="knowledge_base_cta">Knowledge Base</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Live Enterprise Pulse Card -->
+        <div class="hero-pulse-col">
+          <div class="hero-pulse-card">
+            <div class="pulse-header">
+              <div class="pulse-title">
+                <span class="pulse-dot"></span>
+                <span>Portal Live Pulse</span>
+              </div>
+              <div class="pulse-time" id="livePortalClock">--:--:-- UTC</div>
+            </div>
+            <div class="pulse-stats-grid">
+              <div class="pulse-stat-item">
+                <span class="pulse-stat-label">System Uptime</span>
+                <span class="pulse-stat-val" style="color:var(--status-success);">99.98%</span>
+              </div>
+              <div class="pulse-stat-item">
+                <span class="pulse-stat-label">Pending Reviews</span>
+                <span class="pulse-stat-val" id="pulsePendingCount">18</span>
+              </div>
+              <div class="pulse-stat-item">
+                <span class="pulse-stat-label">Active Broadcasts</span>
+                <span class="pulse-stat-val" id="pulseAnnounceCount">5</span>
+              </div>
+              <div class="pulse-stat-item">
+                <span class="pulse-stat-label">Org Satisfaction</span>
+                <span class="pulse-stat-val" style="color:var(--copper-600);">98.4%</span>
+              </div>
+            </div>
+            <div class="pulse-footer">
+              <span>Security Status: <strong>Encrypted TLS 1.3</strong></span>
+              <a href="#requests" class="btn-ghost btn-sm" style="font-weight:700;">Audit Log →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KPI Metric Cards Grid -->
+    <section class="dashboard-section" id="dashboard">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Real-Time Indicators</span>
+          <h2 class="section-title" data-i18n="dashboard_kpis_title">Enterprise Operational Overview</h2>
+        </div>
+        <div class="section-controls">
+          <button class="btn btn-outline btn-sm" id="refreshDashboardBtn" title="Sync Live Metrics">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            <span>Sync Live</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="kpi-grid" id="kpiCardsContainer">
+        <!-- 1: Total Resources -->
+        <div class="kpi-card" data-action="filter-resources" data-filter="all">
+          <div class="kpi-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <div class="kpi-number" id="kpiTotalResources">482</div>
+          <div class="kpi-label" data-i18n="kpi_total_resources">Total Resources</div>
+          <div class="kpi-trend">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            <span>+14 this month</span>
+          </div>
+        </div>
+
+        <!-- 2: Pending Requests -->
+        <div class="kpi-card accent-copper" data-action="filter-requests" data-status="Submitted">
+          <div class="kpi-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="kpi-number" id="kpiPendingRequests">18</div>
+          <div class="kpi-label" data-i18n="kpi_pending_requests">Pending Requests</div>
+          <div class="kpi-trend" style="color:var(--copper-600);">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/></svg>
+            <span>Action Required</span>
+          </div>
+        </div>
+
+        <!-- 3: Documents Managed -->
+        <div class="kpi-card" data-action="filter-documents" data-filter="all">
+          <div class="kpi-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div class="kpi-number" id="kpiTotalDocs">1,420</div>
+          <div class="kpi-label" data-i18n="kpi_documents">Enterprise Documents</div>
+          <div class="kpi-trend">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+            <span>Updated Today</span>
+          </div>
+        </div>
+
+        <!-- 4: Active Services -->
+        <div class="kpi-card" data-action="scroll-section" data-target="services">
+          <div class="kpi-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div class="kpi-number" id="kpiActiveServices">36</div>
+          <div class="kpi-label" data-i18n="kpi_active_services">Active Services</div>
+          <div class="kpi-trend">
+            <span>100% Online</span>
+          </div>
+        </div>
+
+        <!-- 5: Announcements -->
+        <div class="kpi-card accent-copper" data-action="scroll-section" data-target="announcements">
+          <div class="kpi-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <div class="kpi-number" id="kpiAnnouncements">5</div>
+          <div class="kpi-label" data-i18n="kpi_announcements">Announcements</div>
+          <div class="kpi-trend" style="color:var(--copper-600);">
+            <span>2 Unread</span>
+          </div>
+        </div>
+
+        <!-- 6: Open Tasks / Approvals -->
+        <div class="kpi-card" data-action="scroll-section" data-target="calendar">
+          <div class="kpi-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div class="kpi-number" id="kpiOpenTasks">12</div>
+          <div class="kpi-label" data-i18n="kpi_open_tasks">Open Schedules</div>
+          <div class="kpi-trend">
+            <span>Synchronized</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Action Center -->
+    <section class="quick-actions-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Speed & Direct Access</span>
+          <h2 class="section-title" data-i18n="quick_actions_title">Enterprise Quick Actions</h2>
+        </div>
+      </div>
+
+      <div class="quick-actions-grid">
+        <div class="quick-action-tile" data-action="quick-find-resource">
+          <div class="quick-action-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <span class="quick-action-label" data-i18n="action_find_resource">Find Resource</span>
+        </div>
+
+        <div class="quick-action-tile" data-action="quick-submit-request">
+          <div class="quick-action-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <span class="quick-action-label" data-i18n="action_submit_request">Submit Request</span>
+        </div>
+
+        <div class="quick-action-tile" data-action="quick-view-docs">
+          <div class="quick-action-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <span class="quick-action-label" data-i18n="action_view_documents">View Documents</span>
+        </div>
+
+        <div class="quick-action-tile" data-action="quick-contact-hr">
+          <div class="quick-action-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          </div>
+          <span class="quick-action-label" data-i18n="action_contact_hr">Contact HR</span>
+        </div>
+
+        <div class="quick-action-tile" data-action="quick-contact-it">
+          <div class="quick-action-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <span class="quick-action-label" data-i18n="action_contact_it">Contact IT</span>
+        </div>
+
+        <div class="quick-action-tile" data-action="quick-view-directory">
+          <div class="quick-action-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <span class="quick-action-label" data-i18n="action_view_directory">View Directory</span>
+        </div>
+
+        <div class="quick-action-tile" data-action="quick-report-issue">
+          <div class="quick-action-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <span class="quick-action-label" data-i18n="action_report_issue">Report Issue</span>
+        </div>
+
+        <div class="quick-action-tile" data-action="quick-open-kb">
+          <div class="quick-action-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <span class="quick-action-label" data-i18n="action_open_kb">Knowledge Base</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resource Library -->
+    <section class="resources-section" id="resources">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Central Catalog</span>
+          <h2 class="section-title" data-i18n="resource_library_title">Enterprise Resource Library</h2>
+          <p class="section-desc">Search, filter, and launch verified enterprise software, guides, policies, and portals.</p>
+        </div>
+        <div class="section-controls">
+          <button class="btn btn-outline btn-sm" id="resourceResetFiltersBtn">Reset Filters</button>
+        </div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar-wrap">
+        <div class="toolbar-group">
+          <div class="search-input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="input-search" id="resourceSearchInput" placeholder="Filter resources by name, keyword...">
+          </div>
+
+          <select class="select-filter" id="resourceDeptFilter">
+            <option value="all">All Departments</option>
+            <option value="IT">IT & Systems</option>
+            <option value="HR">Human Resources</option>
+            <option value="Finance">Finance & Accounting</option>
+            <option value="Legal">Legal & Compliance</option>
+            <option value="Operations">Operations</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Security">Cyber Security</option>
+            <option value="Facilities">Facilities</option>
+          </select>
+
+          <select class="select-filter" id="resourceTypeFilter">
+            <option value="all">All Resource Types</option>
+            <option value="Software">Software & Apps</option>
+            <option value="Guide">Guides & Docs</option>
+            <option value="Portal">Portals</option>
+            <option value="Policy">Policies</option>
+            <option value="Form">Forms</option>
+          </select>
+        </div>
+
+        <div class="toolbar-group">
+          <div class="filter-chips-wrap" id="resourceCategoryChips">
+            <button class="chip-btn active" data-cat="all">All</button>
+            <button class="chip-btn" data-cat="HR">HR</button>
+            <button class="chip-btn" data-cat="IT">IT</button>
+            <button class="chip-btn" data-cat="Finance">Finance</button>
+            <button class="chip-btn" data-cat="Legal">Legal</button>
+            <button class="chip-btn" data-cat="Operations">Operations</button>
+            <button class="chip-btn" data-cat="Marketing">Marketing</button>
+            <button class="chip-btn" data-cat="Security">Security</button>
+            <button class="chip-btn" data-cat="Training">Training</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resource Grid -->
+      <div class="resource-grid" id="resourceGrid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </section>
+
+    <!-- Document Center -->
+    <section class="documents-section" id="documents">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Governance & Repository</span>
+          <h2 class="section-title" data-i18n="document_center_title">Enterprise Document Center</h2>
+          <p class="section-desc">Access official manuals, compliance forms, contracts, guidelines, and financial reports.</p>
+        </div>
+        <div class="section-controls">
+          <div class="btn-group">
+            <button class="btn btn-outline btn-sm active" id="docViewTableBtn" title="Table View">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            </button>
+            <button class="btn btn-outline btn-sm" id="docViewGridBtn" title="Grid View">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="toolbar-wrap">
+        <div class="toolbar-group">
+          <div class="search-input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="input-search" id="docSearchInput" placeholder="Search documents by title or keyword...">
+          </div>
+
+          <select class="select-filter" id="docCategoryFilter">
+            <option value="all">All Document Types</option>
+            <option value="Company Policies">Company Policies</option>
+            <option value="HR Documents">HR Documents</option>
+            <option value="Financial Documents">Financial Documents</option>
+            <option value="Legal Documents">Legal Documents</option>
+            <option value="Technical Documents">Technical Documents</option>
+            <option value="Forms">Standard Forms</option>
+            <option value="Reports">Executive Reports</option>
+          </select>
+
+          <select class="select-filter" id="docSortFilter">
+            <option value="date-desc">Newest First</option>
+            <option value="date-asc">Oldest First</option>
+            <option value="name-asc">Title (A-Z)</option>
+            <option value="size-desc">Largest File</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Documents Container (Table / Grid) -->
+      <div id="documentsContainer">
+        <div class="table-container">
+          <table class="table" id="documentsTable">
+            <thead>
+              <tr>
+                <th style="width: 40px;"></th>
+                <th>Document Name</th>
+                <th>Category</th>
+                <th>Department</th>
+                <th>Format</th>
+                <th>Size</th>
+                <th>Updated</th>
+                <th>Status</th>
+                <th style="text-align: right;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="documentsTableBody">
+              <!-- Rendered by script.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enterprise Forms Center -->
+    <section class="forms-section" id="forms">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Workflow Automation</span>
+          <h2 class="section-title" data-i18n="forms_center_title">Enterprise Forms Center</h2>
+          <p class="section-desc">Select and submit standardized enterprise service forms. Submissions generate trackable ticket IDs instantly.</p>
+        </div>
+      </div>
+
+      <div class="forms-layout-grid">
+        <!-- Forms Navigation List -->
+        <div class="forms-nav-list" id="formsNavList">
+          <button class="form-select-btn active" data-form="leave">
+            <span>Leave Request</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="form-select-btn" data-form="equipment">
+            <span>Equipment Request</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="form-select-btn" data-form="it_support">
+            <span>IT Support Request</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="form-select-btn" data-form="expense">
+            <span>Expense Reimbursement</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="form-select-btn" data-form="travel">
+            <span>Travel Authorization</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="form-select-btn" data-form="purchase">
+            <span>Purchase Requisition</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="form-select-btn" data-form="facility">
+            <span>Facility / Desk Service</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="form-select-btn" data-form="access">
+            <span>System Access Request</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="form-select-btn" data-form="training">
+            <span>Professional Training</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="form-select-btn" data-form="employee_service">
+            <span>Employee Letter / HR</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+        <!-- Active Form Container -->
+        <div class="form-container-card">
+          <div class="form-header-bar" style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.85rem; margin-bottom: 1rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <h3 id="activeFormTitle" style="color:var(--text-primary);">Leave Request Application</h3>
+                <p id="activeFormDesc" style="font-size:0.85rem; color:var(--text-muted); margin-top:0.25rem;">Submit vacation, medical, or official absence requests to HR operations.</p>
+              </div>
+              <span class="badge-tag badge-cobalt" id="activeFormDeptBadge">Human Resources</span>
+            </div>
+          </div>
+
+          <form id="enterpriseInteractiveForm">
+            <div class="form-grid-fields" id="formDynamicFields">
+              <!-- Dynamically populated per selected form -->
+            </div>
+
+            <div style="margin-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 3px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Automatically routed to department supervisor with audit trail.
+              </span>
+              <button type="submit" class="btn btn-primary" id="formSubmitBtn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                <span>Submit Application</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Request Management System (Ticket Desk) -->
+    <section class="requests-section" id="requests">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Lifecycle & Audit</span>
+          <h2 class="section-title" data-i18n="requests_management_title">Request Management Desk</h2>
+          <p class="section-desc">Track and manage employee requests, approval stages, assignees, and fulfillment milestones.</p>
+        </div>
+        <div class="section-controls">
+          <button class="btn btn-primary btn-sm" id="deskNewRequestBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span>New Request</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="toolbar-wrap">
+        <div class="toolbar-group">
+          <div class="search-input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="input-search" id="requestSearchInput" placeholder="Search by Ticket ID, Title, or Assignee...">
+          </div>
+
+          <select class="select-filter" id="requestStatusFilter">
+            <option value="all">All Statuses</option>
+            <option value="Submitted">Submitted</option>
+            <option value="Reviewing">Reviewing</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Completed">Completed</option>
+          </select>
+
+          <select class="select-filter" id="requestPriorityFilter">
+            <option value="all">All Priorities</option>
+            <option value="Urgent">Urgent</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="table" id="requestsTable">
+          <thead>
+            <tr>
+              <th>Ticket ID</th>
+              <th>Request Title</th>
+              <th>Department</th>
+              <th>Priority</th>
+              <th>Date Created</th>
+              <th>Status</th>
+              <th>Assigned Team</th>
+              <th style="text-align: right;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="requestsTableBody">
+            <!-- Rendered by script.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Department Directory -->
+    <section class="departments-section" id="departments">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Organizational Units</span>
+          <h2 class="section-title" data-i18n="departments_title">Enterprise Department Directory</h2>
+          <p class="section-desc">Key division leadership, headcount, active workflows, and contact channels.</p>
+        </div>
+      </div>
+
+      <div class="department-grid" id="departmentGrid">
+        <!-- Rendered by script.js -->
+      </div>
+    </section>
+
+    <!-- Employee Directory -->
+    <section class="directory-section" id="directory">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Internal Roster</span>
+          <h2 class="section-title" data-i18n="employee_directory_title">Internal Employee Directory</h2>
+          <p class="section-desc">Connect with international team members across departments and global offices.</p>
+        </div>
+      </div>
+
+      <div class="toolbar-wrap">
+        <div class="toolbar-group">
+          <div class="search-input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="input-search" id="employeeSearchInput" placeholder="Search employee name, title, skill...">
+          </div>
+
+          <select class="select-filter" id="employeeDeptFilter">
+            <option value="all">All Departments</option>
+            <option value="Human Resources">Human Resources</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Finance">Finance</option>
+            <option value="Operations">Operations</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Legal">Legal</option>
+          </select>
+
+          <select class="select-filter" id="employeeLocationFilter">
+            <option value="all">All Locations</option>
+            <option value="New York">New York</option>
+            <option value="London">London</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Dubai">Dubai</option>
+            <option value="Tokyo">Tokyo</option>
+            <option value="Remote">Remote Global</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="directory-grid" id="employeeGrid">
+        <!-- Rendered by script.js -->
+      </div>
+    </section>
+
+    <!-- Enterprise Service Catalog -->
+    <section class="services-section" id="services">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Operational SLAs</span>
+          <h2 class="section-title" data-i18n="service_catalog_title">Enterprise Service Catalog</h2>
+          <p class="section-desc">Pre-defined enterprise services with committed turnaround times and responsible teams.</p>
+        </div>
+      </div>
+
+      <div class="service-catalog-grid" id="serviceCatalogGrid">
+        <!-- Rendered by script.js -->
+      </div>
+    </section>
+
+    <!-- Knowledge Base -->
+    <section class="knowledge-section" id="knowledge">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Self-Service Center</span>
+          <h2 class="section-title" data-i18n="knowledge_base_title">Enterprise Knowledge Base</h2>
+          <p class="section-desc">Handbooks, IT configuration guides, compliance frameworks, and troubleshooting playbooks.</p>
+        </div>
+      </div>
+
+      <div class="toolbar-wrap">
+        <div class="toolbar-group">
+          <div class="search-input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="input-search" id="kbSearchInput" placeholder="Search articles, runbooks, policies...">
+          </div>
+
+          <div class="filter-chips-wrap" id="kbCategoryChips">
+            <button class="chip-btn active" data-cat="all">All Topics</button>
+            <button class="chip-btn" data-cat="IT & Infrastructure">IT & Infra</button>
+            <button class="chip-btn" data-cat="Security">Cyber Security</button>
+            <button class="chip-btn" data-cat="HR & Benefits">HR & Perks</button>
+            <button class="chip-btn" data-cat="Operations">Operations</button>
+            <button class="chip-btn" data-cat="Finance">Finance</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="knowledge-grid" id="knowledgeGrid">
+        <!-- Rendered by script.js -->
+      </div>
+    </section>
+
+    <!-- Announcement Center -->
+    <section class="announcements-section" id="announcements">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Official Broadcasts</span>
+          <h2 class="section-title" data-i18n="announcements_title">Company Announcement Center</h2>
+          <p class="section-desc">Enterprise notices, scheduled system maintenance, executive updates, and policy rollouts.</p>
+        </div>
+        <div class="section-controls">
+          <button class="btn btn-outline btn-sm" id="markAllAnnouncementsReadBtn">Mark All as Read</button>
+        </div>
+      </div>
+
+      <div class="announcements-grid" id="announcementsGrid">
+        <!-- Rendered by script.js -->
+      </div>
+    </section>
+
+    <!-- Enterprise Calendar -->
+    <section class="calendar-section" id="calendar">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Corporate Schedule</span>
+          <h2 class="section-title" data-i18n="calendar_title">Enterprise Events & Calendar</h2>
+          <p class="section-desc">Quarterly reviews, global training sessions, town halls, and operational deadlines.</p>
+        </div>
+        <div class="section-controls">
+          <button class="btn btn-primary btn-sm" id="addCalendarEventBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span>Add Event</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="calendar-wrapper">
+        <div class="calendar-main-pane">
+          <div class="calendar-month-nav">
+            <button class="btn-icon" id="calPrevMonthBtn" aria-label="Previous Month">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <h3 class="calendar-month-title" id="calendarCurrentMonthTitle">September 2026</h3>
+            <button class="btn-icon" id="calNextMonthBtn" aria-label="Next Month">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+
+          <div class="calendar-grid" id="calendarDaysGrid">
+            <!-- Rendered by script.js -->
+          </div>
+        </div>
+
+        <div class="calendar-events-side">
+          <h4 id="calendarSelectedDateLabel" style="font-size: 1.05rem; font-weight:700;">Scheduled Events</h4>
+          <span style="font-size:0.75rem; color:var(--text-muted); margin-bottom: 0.5rem;" id="calendarSelectedDateSub">Selected date agenda</span>
+          <div class="events-list" id="calendarDayEventsList">
+            <!-- Events rendered here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resource Analytics & Performance Insights -->
+    <section class="analytics-section" id="analytics">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Business Intelligence</span>
+          <h2 class="section-title" data-i18n="analytics_title">Resource Analytics & Management Insights</h2>
+          <p class="section-desc">Operational capacity metrics, SLA turnaround performance, and request volume trends.</p>
+        </div>
+      </div>
+
+      <div class="analytics-grid">
+        <!-- Monthly Request Volume Chart -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <h4 style="font-weight:700;">Monthly Request Volume</h4>
+              <p style="font-size:0.78rem; color:var(--text-muted);">Total ticket flow across all 10 departments</p>
+            </div>
+            <span class="badge-tag badge-cobalt">2026 YTD</span>
+          </div>
+          <div class="canvas-chart-wrap">
+            <canvas id="monthlyRequestsCanvas"></canvas>
+          </div>
+        </div>
+
+        <!-- Resource Distribution Chart -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <h4 style="font-weight:700;">Department Resource Allocation</h4>
+              <p style="font-size:0.78rem; color:var(--text-muted);">Active services and assets by organizational unit</p>
+            </div>
+            <span class="badge-tag badge-copper">Distribution</span>
+          </div>
+          <div class="canvas-chart-wrap">
+            <canvas id="deptDistributionCanvas"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Performance Metric Indicators -->
+      <div class="pulse-stats-grid" style="grid-template-columns: repeat(4, 1fr); background: var(--bg-surface); padding: 1.5rem; border-radius: var(--radius-xl); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
+        <div class="pulse-stat-item">
+          <span class="pulse-stat-label">SLA Fulfillment Rate</span>
+          <span class="pulse-stat-val" style="color:var(--status-success);">98.4%</span>
+          <span style="font-size:0.7rem; color:var(--text-muted); margin-top:3px;">Within target timeframe</span>
+        </div>
+        <div class="pulse-stat-item">
+          <span class="pulse-stat-label">Average Response Time</span>
+          <span class="pulse-stat-val" style="color:var(--cobalt-600);">1.8 Hours</span>
+          <span style="font-size:0.7rem; color:var(--text-muted); margin-top:3px;">Down 22% from Q2</span>
+        </div>
+        <div class="pulse-stat-item">
+          <span class="pulse-stat-label">Most Active Department</span>
+          <span class="pulse-stat-val" style="color:var(--copper-600);">IT Infrastructure</span>
+          <span style="font-size:0.7rem; color:var(--text-muted); margin-top:3px;">34% of volume</span>
+        </div>
+        <div class="pulse-stat-item">
+          <span class="pulse-stat-label">Employee Portal Engagement</span>
+          <span class="pulse-stat-val" style="color:var(--text-primary);">94.8%</span>
+          <span style="font-size:0.7rem; color:var(--text-muted); margin-top:3px;">Daily active users</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internal Communication (Enterprise Messenger) -->
+    <section class="messenger-section" id="chat">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Direct Enterprise Messaging</span>
+          <h2 class="section-title" data-i18n="chat_title">Internal Department Messenger</h2>
+          <p class="section-desc">Instant real-time communication with HR, IT Helpdesk, and departmental team leads.</p>
+        </div>
+      </div>
+
+      <div class="messenger-wrapper">
+        <!-- Contacts Sidebar -->
+        <div class="messenger-contacts-pane">
+          <div class="messenger-contacts-header">
+            <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--text-muted);">Channels & Leads</span>
+          </div>
+          <div class="messenger-contact-list" id="messengerContactList">
+            <!-- Populated by script.js -->
+          </div>
+        </div>
+
+        <!-- Chat Pane -->
+        <div class="messenger-chat-pane">
+          <div class="chat-header">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div class="avatar avatar-sm" id="chatActiveAvatar">IT</div>
+              <div>
+                <div style="font-size:0.92rem; font-weight:700;" id="chatActiveName">IT Infrastructure Helpdesk</div>
+                <div style="font-size:0.72rem; color:var(--status-success);" id="chatActiveStatus">● Online (Typical reply: &lt; 5m)</div>
+              </div>
+            </div>
+            <button class="btn btn-outline btn-sm" id="clearChatHistoryBtn">Clear Thread</button>
+          </div>
+
+          <div class="chat-messages-body" id="chatMessagesBody">
+            <!-- Messages rendered by script.js -->
+          </div>
+
+          <form class="chat-input-bar" id="chatMessageForm">
+            <input type="text" class="form-control" id="chatTextInput" placeholder="Type an enterprise message or inquiry..." required autocomplete="off">
+            <button type="submit" class="btn btn-primary" id="chatSendBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <span>Send</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="brand-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-title">NEXUS<span>PORTAL</span></span>
+              <span class="brand-tagline">Enterprise Resource System</span>
+            </div>
+          </div>
+          <p>
+            The centralized, secure, ultra-fast operational backbone for international business teams, resource governance, and employee workflow dispatch.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Core Systems</h5>
+          <ul class="footer-links">
+            <li><a href="#resources">Resource Library</a></li>
+            <li><a href="#documents">Document Repository</a></li>
+            <li><a href="#forms">Forms & Workflows</a></li>
+            <li><a href="#requests">Request Desk</a></li>
+            <li><a href="#services">Service Catalog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>People & Hubs</h5>
+          <ul class="footer-links">
+            <li><a href="#departments">Departments</a></li>
+            <li><a href="#directory">Employee Roster</a></li>
+            <li><a href="#knowledge">Knowledge Center</a></li>
+            <li><a href="#announcements">Broadcasts</a></li>
+            <li><a href="#calendar">Corporate Calendar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Enterprise Compliance</h5>
+          <ul class="footer-links">
+            <li><a href="#documents">Information Security Policy</a></li>
+            <li><a href="#documents">Code of Conduct</a></li>
+            <li><a href="#documents">Data Privacy & GDPR</a></li>
+            <li><a href="#documents">SOC2 Compliance Reports</a></li>
+            <li><a href="#documents">Whistleblower Hotline</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 NEXUS Enterprise Systems Group. All rights reserved. Self-contained & offline-ready architecture.
+        </div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="#dashboard" style="color:var(--text-muted);">Terms of Service</a>
+          <a href="#dashboard" style="color:var(--text-muted);">Security Whitepaper</a>
+          <a href="#dashboard" style="color:var(--text-muted);">System Diagnostics</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS & DRAWERS ==================== -->
+
+  <!-- 1: Global Omnisearch Modal (Ctrl+K) -->
+  <div class="modal-backdrop" id="globalSearchModal" role="dialog" aria-modal="true" aria-labelledby="globalSearchTitle">
+    <div class="modal-dialog search-modal-dialog">
+      <div class="search-modal-input-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-modal-input" id="modalOmniSearchInput" placeholder="Search resources, documents, services, people, runbooks..." autocomplete="off">
+        <span class="kbd-shortcut">ESC to close</span>
+      </div>
+      <div class="search-results-list" id="omniSearchResultsList">
+        <!-- Live search results -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 2: Slide-Out Notifications Drawer -->
+  <div class="drawer" id="notificationsDrawer" role="region" aria-label="Notifications Center">
+    <div class="drawer-header">
+      <h3 style="font-size:1.15rem; font-weight:800;">Enterprise Notifications</h3>
+      <button class="btn-icon" id="closeNotificationsDrawerBtn" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div style="padding: 0.75rem 1.5rem; display:flex; justify-content:space-between; border-bottom:1px solid var(--border-subtle);">
+      <span style="font-size:0.75rem; color:var(--text-muted);" id="drawerNotifCountText">3 Unread Alerts</span>
+      <button class="btn-ghost btn-sm" id="drawerMarkAllReadBtn">Mark all as read</button>
+    </div>
+    <div class="drawer-body" id="drawerNotificationsList">
+      <!-- Populated by script.js -->
+    </div>
+  </div>
+
+  <!-- 3: Slide-Out Favorites Drawer -->
+  <div class="drawer" id="favoritesDrawer" role="region" aria-label="My Favorites">
+    <div class="drawer-header">
+      <h3 style="font-size:1.15rem; font-weight:800;">My Pinned Favorites</h3>
+      <button class="btn-icon" id="closeFavoritesDrawerBtn" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="drawer-body" id="drawerFavoritesList">
+      <!-- Populated by script.js -->
+    </div>
+  </div>
+
+  <!-- 4: Generic Detail Modal (Resource, Document, Article, Ticket) -->
+  <div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="detailModalTitle">Resource Details</h3>
+        <button class="btn-icon" id="closeDetailModalBtn" aria-label="Close dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" id="detailModalBody">
+        <!-- Content inserted dynamically -->
+      </div>
+      <div class="modal-footer" id="detailModalFooter">
+        <button class="btn btn-outline" id="detailModalCloseBtn">Close</button>
+        <button class="btn btn-primary" id="detailModalActionBtn">Launch Portal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5: Add Calendar Event Modal -->
+  <div class="modal-backdrop" id="calendarEventModal" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Schedule Enterprise Event</h3>
+        <button class="btn-icon" id="closeCalEventModalBtn" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <form id="newCalendarEventForm">
+        <div class="modal-body">
+          <div class="form-group" style="margin-bottom:1rem;">
+            <label class="form-label">Event Title</label>
+            <input type="text" class="form-control" id="eventTitleInput" placeholder="e.g. Q4 Executive Strategy Townhall" required>
+          </div>
+          <div class="form-grid-fields">
+            <div class="form-group">
+              <label class="form-label">Event Date</label>
+              <input type="date" class="form-control" id="eventDateInput" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Time</label>
+              <input type="time" class="form-control" id="eventTimeInput" value="10:00" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Category</label>
+              <select class="form-control" id="eventCategoryInput">
+                <option value="Executive">Executive Meeting</option>
+                <option value="Training">Global Training</option>
+                <option value="Maintenance">IT Maintenance</option>
+                <option value="Deadline">Financial Deadline</option>
+                <option value="Social">Company Event</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Location / Link</label>
+              <input type="text" class="form-control" id="eventLocationInput" placeholder="e.g. Conference Room A / Zoom 01">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancelCalEventBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save to Calendar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6: User Profile & Settings Modal -->
+  <div class="modal-backdrop" id="userProfileModal" role="dialog" aria-modal="true">
+    <div class="modal-dialog" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Employee Profile & System Preferences</h3>
+        <button class="btn-icon" id="closeUserProfileModalBtn" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <form id="userProfileEditForm">
+        <div class="modal-body">
+          <!-- Profile Info -->
+          <div style="display:flex; align-items:center; gap:1.25rem; margin-bottom:1.5rem; padding-bottom:1.25rem; border-bottom:1px solid var(--border-subtle);">
+            <div class="avatar avatar-lg" id="profileModalAvatar">AL</div>
+            <div>
+              <h4 id="profileModalNameDisplay" style="font-size:1.15rem;">Alex Lawrence</h4>
+              <p style="font-size:0.82rem; color:var(--copper-600); font-weight:600;" id="profileModalTitleDisplay">Senior Software Engineer • Infrastructure</p>
+              <span style="font-size:0.75rem; color:var(--text-muted);" id="profileModalLocationDisplay">New York Headquarters • EXT 4082</span>
+            </div>
+          </div>
+
+          <div class="form-grid-fields" style="margin-top:0;">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="prefNameInput" value="Alex Lawrence" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Job Title</label>
+              <input type="text" class="form-control" id="prefTitleInput" value="Senior Software Engineer" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Department</label>
+              <input type="text" class="form-control" id="prefDeptInput" value="Information Technology" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Global Office</label>
+              <input type="text" class="form-control" id="prefLocationInput" value="New York HQ">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Extension</label>
+              <input type="text" class="form-control" id="prefExtInput" value="4082">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Display Density</label>
+              <select class="form-control" id="prefDensitySelect">
+                <option value="cozy">Cozy (Standard)</option>
+                <option value="compact">Compact (High Information Density)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Preferences -->
+          <div style="margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid var(--border-subtle);">
+            <h5 style="margin-bottom:0.75rem;">System Notification Preferences</h5>
+            <div style="display:flex; flex-direction:column; gap:0.5rem; font-size:0.85rem;">
+              <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+                <input type="checkbox" id="prefNotifRequests" checked>
+                <span>Notify me on Ticket status updates & approvals</span>
+              </label>
+              <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+                <input type="checkbox" id="prefNotifAnnounce" checked>
+                <span>Receive High-Priority Enterprise Broadcasts</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="demoAuthSwitchBtn">Switch / Demo Auth</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 7: Demo Authentication Modal -->
+  <div class="modal-backdrop" id="demoAuthModal" role="dialog" aria-modal="true">
+    <div class="modal-dialog" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="authModalTitle">Enterprise SSO Login</h3>
+        <button class="btn-icon" id="closeDemoAuthModalBtn" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <form id="demoAuthForm">
+        <div class="modal-body">
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.25rem;">
+            Demo account simulation. Use any corporate email to test credentials and profile switching.
+          </p>
+          <div class="form-group" style="margin-bottom:1rem;">
+            <label class="form-label">Corporate Email</label>
+            <input type="email" class="form-control" id="authEmailInput" value="alex.lawrence@nexus-enterprise.org" required>
+          </div>
+          <div class="form-group" style="margin-bottom:1rem;">
+            <label class="form-label">Access Passcode</label>
+            <input type="password" class="form-control" id="authPasswordInput" value="••••••••••••" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Select Demo Role</label>
+            <select class="form-control" id="authRoleSelect">
+              <option value="Alex Lawrence|Senior Software Engineer|IT">Alex Lawrence (Senior Engineer • IT)</option>
+              <option value="Sarah Jenkins|VP Human Resources|HR">Sarah Jenkins (VP Human Resources)</option>
+              <option value="Marcus Vance|Chief Financial Officer|Finance">Marcus Vance (Chief Financial Officer)</option>
+              <option value="Elena Rostova|Director of Operations|Operations">Elena Rostova (Director of Operations)</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="demoLogoutBtn">Logout</button>
+          <button type="submit" class="btn btn-primary">Sign In / Switch</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Stack -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Core Script (Direct Root File) -->
+  <script src="script.js"></script>
+</body>
+</html>
